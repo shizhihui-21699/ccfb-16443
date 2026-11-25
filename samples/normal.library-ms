@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  正常 .library-ms 样本:引用全部指向白名单内文件服务器 → Benign
+-->
+<libraryDescription>
+  <name>公司制度库</name>
+  <iconReference>\\filer.corp.example.com\corporate-icons\library.ico</iconReference>
+  <searchConnectorDescriptionList>
+    <searchConnectorDescription>
+      <simpleLocation>
+        <url>\\filer.corp.example.com\policy-docs</url>
+      </simpleLocation>
+    </searchConnectorDescription>
+  </searchConnectorDescriptionList>
+</libraryDescription>

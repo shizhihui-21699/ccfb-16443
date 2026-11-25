@@ -1,0 +1,5 @@
+[Shell]
+; 正常内部引用:主机在 allowedSuffixes (corp.example.com) 内 → Benign
+; 企业里大量快捷方式/desktop.ini 都这样引用内部文件服务器的图标,
+; 这正是工具必须靠白名单而非"出现 UNC 就报警"的原因
+IconFile=\\filer.corp.example.com\corporate-icons\favicon.ico

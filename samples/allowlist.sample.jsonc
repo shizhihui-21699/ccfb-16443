@@ -1,0 +1,37 @@
+{
+  // 企业 DNS 后缀:主机名等于或以此结尾即视为内部(前导点可省略)
+  "allowedSuffixes": [
+    "corp.example.com",
+    "emea.corp.example.com"
+  ],
+
+  // 显式批准的主机名:DFS 根、文件服务器群集、NAS 别名等
+  // 这份名单同时用于生成终端 NTLM 外发豁免清单,务必与资产台账保持一致
+  "allowedHosts": [
+    "dfs-root.corp.example.com",
+    "filer-cluster.corp.example.com"
+  ],
+
+  // 内部 IPv4/IPv6 网段(CIDR)。IP 字面量引用落在这些网段内即放行;
+  // IPv4 映射的 IPv6 地址(::ffff:a.b.c.d)会自动还原后匹配,无法绕过
+  "allowedCidrs": [
+    "10.0.0.0/8",
+    "172.16.0.0/12",
+    "192.168.0.0/16",
+    "fd00::/8"
+  ],
+
+  // 显式批准的单标签 NetBIOS 名(无 DNS 后缀的传统服务器)
+  "allowedSingleLabelNames": [
+    "legacy-nas",
+    "print01"
+  ],
+
+  // 允许出现的非默认端口。清单外的带端口引用会被加重判罚
+  "allowedPorts": [ 445, 139, 80, 443 ],
+
+  // 并购过渡期等场景:属于此外部后缀但暂不直接判 Malicious,先人工复核
+  "pendingReviewSuffixes": [
+    "acquired-company.example"
+  ]
+}

@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ShareGuard.Core/ShareGuard.Core.csproj" />
+    <Project Path="src/ShareGuard.Cli/ShareGuard.Cli.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ShareGuard.Tests/ShareGuard.Tests.csproj" />
+  </Folder>
+</Solution>
