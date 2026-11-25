@@ -16,3 +16,10 @@ node_modules/
 __pycache__/
 .venv/
 venv/
+
+# .NET build artifacts
+bin/
+obj/
+*.user
+trapsweeper-output/
+TestResults/

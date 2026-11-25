@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TrapSweeper.Cli/TrapSweeper.Cli.csproj" />
+    <Project Path="src/TrapSweeper.Core/TrapSweeper.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TrapSweeper.Tests/TrapSweeper.Tests.csproj" />
+  </Folder>
+</Solution>
